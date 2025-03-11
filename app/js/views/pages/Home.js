@@ -2,7 +2,7 @@ import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
 export default class Home {
     async render() {
-        let characters = await CharactersProvider.fetchCharacters(3);
+        let characters = await CharactersProvider.fetchCharacters(1, 3);
 
         if (!characters || characters.length === 0) {
             return `<h2>Aucun personnage trouvé.</h2>`;

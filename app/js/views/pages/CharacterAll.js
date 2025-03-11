@@ -1,8 +1,13 @@
 import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
 export default class CharacterAll {
+    constructor() {
+        this.currentPage = 1;
+        this.limit = 15;
+    }
+
     async render() {
-        let characters = await CharactersProvider.fetchCharacters(50);
+        let characters = await CharactersProvider.fetchCharacters(this.currentPage, this.limit);
 
         if (!characters || characters.length === 0) {
             return `<h2>Aucun personnage trouvé.</h2>`;
@@ -43,7 +48,23 @@ export default class CharacterAll {
                     `
                 ).join('\n')}
             </div>
+
+            <!-- Pagination -->
+            <div class="d-flex justify-content-between mt-4">
+                <button class="btn btn-primary" ${this.currentPage === 1 ? 'disabled' : ''} onclick="this.goToPage('prev')">Précédent</button>
+                <button class="btn btn-primary" onclick="this.goToPage('next')">Suivant</button>
+            </div>
         `;
         return view;
+    }
+
+    goToPage(direction) {
+        if (direction === 'next') {
+            this.currentPage++;
+        } else if (direction === 'prev' && this.currentPage > 1) {
+            this.currentPage--;
+        }
+
+        this.render();
     }
 }
