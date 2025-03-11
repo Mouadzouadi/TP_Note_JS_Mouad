@@ -1,34 +1,49 @@
-import charactersProvider from "/app/js/services/CharactersProvider.js";
+import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
-export default class characterAll {
+export default class CharacterAll {
+    async render() {
+        let characters = await CharactersProvider.fetchCharacters(50);
 
-    async render () {
-        let characters = await charactersProvider.fetchCharacters(50);
-        let view =  /*html*/`
-            <h2>Tous characters</h2>
+        if (!characters || characters.length === 0) {
+            return `<h2>Aucun personnage trouvé.</h2>`;
+        }
+
+        let view = /*html*/`
+            <h2>Tous les personnages</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                ${ characters.map(character => 
+                ${characters.map(character => 
                     /*html*/`
                     <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">${character.title}</text></svg>
-                        <div class="card-body">
-                            <p class="card-text">${character.text ? character.text.slice(0,100) : ''}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-secondary">Voir ${character.title}</a>
+                        <div class="card shadow-sm">
+                            <div class="card-header text-center">
+                                <h5 class="card-title">${character.name}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Jeu :</strong> ${character.game}</p>
+                                <p><strong>Classe :</strong> ${character.class}</p>
+                                <p><strong>Niveau :</strong> ${character.level}</p>
+                                <p><strong>Expérience :</strong> ${character.experience}</p>
+
+                                <h6>Équipement principal :</h6>
+                                <ul>
+                                    ${character.equipment.map(equip => `
+                                        <li><strong>${equip.name}</strong> (${equip.type}) - Attaque: ${equip.attack}, Magie: ${equip.magic}</li>
+                                    `).join('')}
+                                </ul>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
+                                        Voir ${character.name}
+                                    </a>
+                                    <small class="text-body-secondary">ID: ${character.id}</small>
                                 </div>
-                                <small class="text-body-secondary">${character.id}</small>
                             </div>
                         </div>
                     </div>
-                    </div>
                     `
-                    ).join('\n ')
-                }
+                ).join('\n')}
             </div>
-        `
-        return view
+        `;
+        return view;
     }
-
 }

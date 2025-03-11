@@ -1,165 +1,577 @@
 {
-    "characters": [
-      {
-        "id": 1,
-        "name": "Arthas Menethil",
-        "game": "Warcraft",
-        "class": "Paladin",
-        "level": 10,
-        "experience": 5000,
-        "equipment": [
-          {
-            "type": "Sword",
-            "name": "Frostmourne",
-            "attack": 35,
-            "magic": 10
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Geralt of Rivia",
-        "game": "The Witcher",
-        "class": "Witcher",
-        "level": 15,
-        "experience": 8000,
-        "equipment": [
-          {
-            "type": "Sword",
-            "name": "Silver Sword",
-            "attack": 40,
-            "magic": 15
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Link",
-        "game": "The Legend of Zelda",
-        "class": "Hero",
-        "level": 12,
-        "experience": 6000,
-        "equipment": [
-          {
-            "type": "Sword",
-            "name": "Master Sword",
-            "attack": 45,
-            "magic": 20
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Lara Croft",
-        "game": "Tomb Raider",
-        "class": "Adventurer",
-        "level": 8,
-        "experience": 4000,
-        "equipment": [
-          {
-            "type": "Bow",
-            "name": "Recurve Bow",
-            "attack": 30,
-            "magic": 5
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Mario",
-        "game": "Super Mario",
-        "class": "Plumber",
-        "level": 10,
-        "experience": 5000,
-        "equipment": [
-          {
-            "type": "Mushroom",
-            "name": "Super Mushroom",
-            "attack": 10,
-            "magic": 0
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Ezio Auditore",
-        "game": "Assassin's Creed",
-        "class": "Assassin",
-        "level": 18,
-        "experience": 9000,
-        "equipment": [
-          {
-            "type": "Sword",
-            "name": "Hidden Blade",
-            "attack": 25,
-            "magic": 10
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "name": "Samus Aran",
-        "game": "Metroid",
-        "class": "Bounty Hunter",
-        "level": 20,
-        "experience": 10000,
-        "equipment": [
-          {
-            "type": "Gun",
-            "name": "Arm Cannon",
-            "attack": 50,
-            "magic": 25
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "name": "Kratos",
-        "game": "God of War",
-        "class": "Warrior",
-        "level": 25,
-        "experience": 12000,
-        "equipment": [
-          {
-            "type": "Axe",
-            "name": "Leviathan Axe",
-            "attack": 60,
-            "magic": 30
-          }
-        ]
-      },
-      {
-        "id": 9,
-        "name": "Cloud Strife",
-        "game": "Final Fantasy VII",
-        "class": "Mercenary",
-        "level": 16,
-        "experience": 7500,
-        "equipment": [
-          {
-            "type": "Sword",
-            "name": "Ultima Weapon",
-            "attack": 55,
-            "magic": 15
-          }
-        ]
-      },
-      {
-        "id": 10,
-        "name": "Jill Valentine",
-        "game": "Resident Evil",
-        "class": "S.T.A.R.S. Member",
-        "level": 9,
-        "experience": 4500,
-        "equipment": [
-          {
-            "type": "Handgun",
-            "name": "Samurai Edge",
-            "attack": 35,
-            "magic": 5
-          }
-        ]
-      }
-    ]
-  }
-  
+  "characters": [
+    {
+      "id": 1,
+      "name": "Arthas Menethil",
+      "game": "Warcraft",
+      "class": "Paladin",
+      "level": 10,
+      "experience": 5000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Frostmourne",
+          "attack": 35,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Geralt of Rivia",
+      "game": "The Witcher",
+      "class": "Witcher",
+      "level": 15,
+      "experience": 8000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Silver Sword",
+          "attack": 40,
+          "magic": 15
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Link",
+      "game": "The Legend of Zelda",
+      "class": "Hero",
+      "level": 12,
+      "experience": 6000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Master Sword",
+          "attack": 45,
+          "magic": 20
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Lara Croft",
+      "game": "Tomb Raider",
+      "class": "Adventurer",
+      "level": 8,
+      "experience": 4000,
+      "equipment": [
+        {
+          "type": "Bow",
+          "name": "Recurve Bow",
+          "attack": 30,
+          "magic": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Mario",
+      "game": "Super Mario",
+      "class": "Plumber",
+      "level": 10,
+      "experience": 5000,
+      "equipment": [
+        {
+          "type": "Mushroom",
+          "name": "Super Mushroom",
+          "attack": 10,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Ezio Auditore",
+      "game": "Assassin's Creed",
+      "class": "Assassin",
+      "level": 18,
+      "experience": 9000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Hidden Blade",
+          "attack": 25,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Samus Aran",
+      "game": "Metroid",
+      "class": "Bounty Hunter",
+      "level": 20,
+      "experience": 10000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Arm Cannon",
+          "attack": 50,
+          "magic": 25
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Kratos",
+      "game": "God of War",
+      "class": "Warrior",
+      "level": 25,
+      "experience": 12000,
+      "equipment": [
+        {
+          "type": "Axe",
+          "name": "Leviathan Axe",
+          "attack": 60,
+          "magic": 30
+        },
+        {
+          "type": "Blades",
+          "name": "Blades of Chaos",
+          "attack": 75,
+          "magic": 25
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cloud Strife",
+      "game": "Final Fantasy VII",
+      "class": "Mercenary",
+      "level": 16,
+      "experience": 7500,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Ultima Weapon",
+          "attack": 55,
+          "magic": 15
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Jill Valentine",
+      "game": "Resident Evil",
+      "class": "S.T.A.R.S. Member",
+      "level": 9,
+      "experience": 4500,
+      "equipment": [
+        {
+          "type": "Handgun",
+          "name": "Samurai Edge",
+          "attack": 35,
+          "magic": 5
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Master Chief",
+      "game": "Halo",
+      "class": "Spartan",
+      "level": 30,
+      "experience": 15000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Assault Rifle",
+          "attack": 40,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Doom Slayer",
+      "game": "DOOM",
+      "class": "Demon Slayer",
+      "level": 35,
+      "experience": 20000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Super Shotgun",
+          "attack": 80,
+          "magic": 5
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Nathan Drake",
+      "game": "Uncharted",
+      "class": "Treasure Hunter",
+      "level": 14,
+      "experience": 6500,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "9mm Pistol",
+          "attack": 30,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Scorpion",
+      "game": "Mortal Kombat",
+      "class": "Ninja",
+      "level": 25,
+      "experience": 12000,
+      "equipment": [
+        {
+          "type": "Spear",
+          "name": "Kunai",
+          "attack": 50,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Solid Snake",
+      "game": "Metal Gear Solid",
+      "class": "Spy",
+      "level": 22,
+      "experience": 11000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "SOCOM Pistol",
+          "attack": 40,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Bayonetta",
+      "game": "Bayonetta",
+      "class": "Witch",
+      "level": 28,
+      "experience": 14000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Scarborough Fair",
+          "attack": 55,
+          "magic": 30
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Sephiroth",
+      "game": "Final Fantasy VII",
+      "class": "One-Winged Angel",
+      "level": 50,
+      "experience": 30000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Masamune",
+          "attack": 100,
+          "magic": 50
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Dante",
+      "game": "Devil May Cry",
+      "class": "Demon Hunter",
+      "level": 35,
+      "experience": 18000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Rebellion",
+          "attack": 70,
+          "magic": 20
+        },
+        {
+          "type": "Gun",
+          "name": "Ebony & Ivory",
+          "attack": 40,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Vergil",
+      "game": "Devil May Cry",
+      "class": "Dark Slayer",
+      "level": 40,
+      "experience": 20000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Yamato",
+          "attack": 80,
+          "magic": 40
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Sub-Zero",
+      "game": "Mortal Kombat",
+      "class": "Cryomancer",
+      "level": 25,
+      "experience": 12000,
+      "equipment": [
+        {
+          "type": "Fists",
+          "name": "Ice Gauntlets",
+          "attack": 45,
+          "magic": 35
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Raiden",
+      "game": "Mortal Kombat",
+      "class": "Thunder God",
+      "level": 30,
+      "experience": 15000,
+      "equipment": [
+        {
+          "type": "Magic",
+          "name": "Lightning Bolts",
+          "attack": 60,
+          "magic": 50
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Sam Fisher",
+      "game": "Splinter Cell",
+      "class": "Stealth Operative",
+      "level": 26,
+      "experience": 13000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Five-seveN",
+          "attack": 35,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Agent 47",
+      "game": "Hitman",
+      "class": "Assassin",
+      "level": 27,
+      "experience": 14000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Silverballers",
+          "attack": 50,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Travis Touchdown",
+      "game": "No More Heroes",
+      "class": "Assassin",
+      "level": 22,
+      "experience": 11000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Beam Katana",
+          "attack": 65,
+          "magic": 15
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Fox McCloud",
+      "game": "Star Fox",
+      "class": "Pilot",
+      "level": 20,
+      "experience": 9000,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Blaster",
+          "attack": 40,
+          "magic": 5
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Captain Falcon",
+      "game": "F-Zero",
+      "class": "Racer",
+      "level": 23,
+      "experience": 10500,
+      "equipment": [
+        {
+          "type": "Fists",
+          "name": "Falcon Punch",
+          "attack": 70,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Gordon Freeman",
+      "game": "Half-Life",
+      "class": "Scientist",
+      "level": 21,
+      "experience": 9500,
+      "equipment": [
+        {
+          "type": "Melee",
+          "name": "Crowbar",
+          "attack": 30,
+          "magic": 0
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "BJ Blazkowicz",
+      "game": "Wolfenstein",
+      "class": "Resistance Fighter",
+      "level": 29,
+      "experience": 13500,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "LaserKraftWerk",
+          "attack": 85,
+          "magic": 10
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Aloy",
+      "game": "Horizon Zero Dawn",
+      "class": "Hunter",
+      "level": 24,
+      "experience": 11500,
+      "equipment": [
+        {
+          "type": "Bow",
+          "name": "Sharpshot Bow",
+          "attack": 55,
+          "magic": 5
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Ryu",
+      "game": "Street Fighter",
+      "class": "Martial Artist",
+      "level": 32,
+      "experience": 16000,
+      "equipment": [
+        {
+          "type": "Fists",
+          "name": "Hadoken",
+          "attack": 60,
+          "magic": 40
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Chun-Li",
+      "game": "Street Fighter",
+      "class": "Martial Artist",
+      "level": 30,
+      "experience": 15000,
+      "equipment": [
+        {
+          "type": "Fists",
+          "name": "Spinning Bird Kick",
+          "attack": 50,
+          "magic": 35
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Jin Kazama",
+      "game": "Tekken",
+      "class": "Fighter",
+      "level": 33,
+      "experience": 17000,
+      "equipment": [
+        {
+          "type": "Fists",
+          "name": "Devil Power",
+          "attack": 80,
+          "magic": 50
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Dovahkiin",
+      "game": "The Elder Scrolls V: Skyrim",
+      "class": "Dragonborn",
+      "level": 45,
+      "experience": 25000,
+      "equipment": [
+        {
+          "type": "Shout",
+          "name": "Fus Ro Dah",
+          "attack": 90,
+          "magic": 60
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Sora",
+      "game": "Kingdom Hearts",
+      "class": "Keyblade Wielder",
+      "level": 37,
+      "experience": 19000,
+      "equipment": [
+        {
+          "type": "Sword",
+          "name": "Kingdom Key",
+          "attack": 65,
+          "magic": 45
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Leon Kennedy",
+      "game": "Resident Evil",
+      "class": "Survivor",
+      "level": 28,
+      "experience": 14500,
+      "equipment": [
+        {
+          "type": "Gun",
+          "name": "Matilda",
+          "attack": 50,
+          "magic": 0
+        }
+      ]
+    }
+  ]
+}
+

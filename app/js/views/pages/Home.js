@@ -1,43 +1,57 @@
-// Instantiate API
 import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
 export default class Home {
-
     async render() {
-        let characters = await CharactersProvider.fetchCharacters(3)
+        let characters = await CharactersProvider.fetchCharacters(3);
+
+        if (!characters || characters.length === 0) {
+            return `<h2>Aucun personnage trouvé.</h2>`;
+        }
+
         let html = characters.map(character =>
             /*html*/`
             <div class="col">
-            <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">${character.title}</text></svg>
-                <div class="card-body">
-                    <p class="card-text">${character.text ? character.text.slice(0, 100) : ''}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                        <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-secondary">+ détail sur ${character.title}</a>
+                <div class="card shadow-sm">
+                    <div class="card-header text-center">
+                        <h5 class="card-title">${character.name}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Jeu :</strong> ${character.game}</p>
+                        <p><strong>Classe :</strong> ${character.class}</p>
+                        <p><strong>Niveau :</strong> ${character.level}</p>
+
+                        <h6>Équipement principal :</h6>
+                        <ul>
+                            ${character.equipment.map(equip => `
+                                <li><strong>${equip.name}</strong> (${equip.type}) - Attaque: ${equip.attack}, Magie: ${equip.magic}</li>
+                            `).join('')}
+                        </ul>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
+                                + Détail sur ${character.name}
+                            </a>
+                            <small class="text-body-secondary">ID: ${character.id}</small>
                         </div>
-                        <small class="text-body-secondary">${character.id}</small>
                     </div>
                 </div>
             </div>
-            </div>
             `
         ).join('\n ');
-        
+
         return /*html*/`
             <section class="py-5 text-center container">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">characters example</h1>
-                        <p class="lead text-body-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, aliquid voluptas sit aperiam quis architecto quaerat vel ratione placeat delectus repellendus cum animi sequi amet corporis minima ab, nisi at!</p>
+                        <h1 class="fw-light">Personnages populaires</h1>
+                        <p class="lead text-body-secondary">Découvrez les personnages emblématiques des jeux vidéo.</p>
                         <p>
-                            <a href="" class="btn btn-primary my-2">Main call to action</a>
-                            <a href="" class="btn btn-secondary my-2">Secondary action</a>
+                            <a href="#/characters" class="btn btn-primary my-2">Voir tous les personnages</a>
                         </p>
                     </div>
                 </div>
             </section>
-            <h2>Les 3 premiers characters</h2>
+            <h2>Les 3 premiers personnages</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 ${html}
             </div>
