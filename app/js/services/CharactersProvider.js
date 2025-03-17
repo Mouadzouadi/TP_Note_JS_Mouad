@@ -24,15 +24,28 @@ export default class CharactersProvider {
             headers: {
                 'Content-Type': 'application/json'
             }
-        };
-        try {
-            const response = await fetch(`${ENDPOINT}?_page=${page}&_limit=${limit}`, options);
-            const json = await response.json();
-            return json;
+        }
+            try {
+                const response = await fetch(`${ENDPOINT}?_page=${page}&_per_page=${limit}`, options);
+                const json = await response.json();
+                
+                // On suppose que la structure est maintenant sous `data`
+                const characters = json.data;  // Récupérer les personnages
+                
+                // Pagination info
+                const pagination = {
+                    first: json.first,
+                    prev: json.prev,
+                    next: json.next,
+                    last: json.last,
+                    pages: json.pages,
+                    items: json.items
+                };
+    
+            return { characters, pagination };
         } catch (err) {
             console.log('Error getting documents', err);
-        }
-    }
+        }}
     static getCharacter = async (id) => {
         const options = {
             method: 'GET',

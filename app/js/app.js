@@ -27,7 +27,7 @@ const router = async () => {
     content.innerHTML = await page.render();
 
     if (typeof page.postRender === "function") {
-        await page.postRender(); // Attache les événements après le rendu
+        await page.postRender();
     }
 };
 

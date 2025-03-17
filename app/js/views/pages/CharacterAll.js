@@ -1,5 +1,4 @@
 import CharactersProvider from "/app/js/services/CharactersProvider.js";
-
 export default class CharacterAll {
     constructor() {
         this.currentPage = 1;
@@ -11,10 +10,9 @@ export default class CharacterAll {
         const urlParams = new URLSearchParams(window.location.search);
         this.searchQuery = urlParams.get('search') || '';
 
-
-
-
         let characters;
+        let pagination;
+
         if (this.searchQuery) {
             characters = await CharactersProvider.fetchCharacters();
             characters = characters.filter(character => 
@@ -23,14 +21,14 @@ export default class CharacterAll {
                 || character.class.toLowerCase().includes(this.searchQuery.toLowerCase()) // Filtrer selon la classe
                 || character.equipment.some(equip => equip.name.toLowerCase().includes(this.searchQuery.toLowerCase())) // Filtrer selon l'équipement
             );
-
-            this.searchQuery = '';
+            this.searchQuery = ''; // Réinitialise la recherche
             const url = new URL(window.location);
             url.searchParams.delete('search');
             window.history.pushState({}, '', url);
-
         } else {
-            characters = await CharactersProvider.fetchCharactersByPage(this.currentPage, this.limit);
+            const result = await CharactersProvider.fetchCharactersByPage(this.currentPage, this.limit);
+            characters = result.characters;
+            pagination = result.pagination;
         }
 
         if (!characters || characters.length === 0) {
@@ -68,14 +66,26 @@ export default class CharacterAll {
             `
         ).join('\n ');
 
+        let paginationHtml = '';
+        if (pagination) {
+            if (pagination.prev) {
+                paginationHtml += `<button id="prevPageBtn" class="btn btn-primary">Page Précédente</button>`;
+            }
+            if (pagination.next) {
+                paginationHtml += `<button id="nextPageBtn" class="btn btn-primary">Page Suivante</button>`;
+            }
+        }
+
         return /*html*/`
             <h2>Liste des personnages</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 ${html}
             </div>
+            <div class="pagination">
+                ${paginationHtml}
+            </div>
         `;
     }
-
 
     async postRender() {
         document.getElementById("prevPageBtn")?.addEventListener("click", () => this.goToPage('prev'));
@@ -89,10 +99,9 @@ export default class CharacterAll {
             this.currentPage--;
         }
 
-        console.log('Go to page', this.currentPage);
-
         let content = document.querySelector('#content');
         content.innerHTML = await this.render();
         await this.postRender();
     }
 }
+

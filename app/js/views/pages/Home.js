@@ -37,6 +37,7 @@ export default class Home {
     }
 
     generateCharacterCards(characters) {
+        characters = characters.characters;
         return characters.map(character =>
             /*html*/`
             <div class="col">
