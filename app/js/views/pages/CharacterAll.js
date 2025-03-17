@@ -8,16 +8,16 @@ export default class CharacterAll {
 
     async render() {
         let characters = await CharactersProvider.fetchCharacters(this.currentPage, this.limit);
+        console.log('Characters', characters);
 
         if (!characters || characters.length === 0) {
             return `<h2>Aucun personnage trouvé.</h2>`;
         }
 
-        let view = /*html*/`
+        return /*html*/`
             <h2>Tous les personnages</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                ${characters.map(character => 
-                    /*html*/`
+                ${characters.map(character => `
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-header text-center">
@@ -45,26 +45,33 @@ export default class CharacterAll {
                             </div>
                         </div>
                     </div>
-                    `
-                ).join('\n')}
+                `).join('\n')}
             </div>
 
             <!-- Pagination -->
             <div class="d-flex justify-content-between mt-4">
-                <button class="btn btn-primary" ${this.currentPage === 1 ? 'disabled' : ''} onclick="this.goToPage('prev')">Précédent</button>
-                <button class="btn btn-primary" onclick="this.goToPage('next')">Suivant</button>
+                <button id="prevPageBtn" class="btn btn-primary" ${this.currentPage === 1 ? 'disabled' : ''}>Précédent</button>
+                <button id="nextPageBtn" class="btn btn-primary">Suivant</button>
             </div>
         `;
-        return view;
     }
 
-    goToPage(direction) {
+    async postRender() {
+        document.getElementById("prevPageBtn")?.addEventListener("click", () => this.goToPage('prev'));
+        document.getElementById("nextPageBtn")?.addEventListener("click", () => this.goToPage('next'));
+    }
+
+    async goToPage(direction) {
         if (direction === 'next') {
             this.currentPage++;
         } else if (direction === 'prev' && this.currentPage > 1) {
             this.currentPage--;
         }
 
-        this.render();
+        console.log('Go to page', this.currentPage);
+
+        let content = document.querySelector('#content');
+        content.innerHTML = await this.render(); // Recharge la vue
+        await this.postRender(); // Réattache les événements
     }
 }

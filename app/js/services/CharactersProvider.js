@@ -11,6 +11,7 @@ export default class CharactersProvider {
         };
         try {
             const response = await fetch(`${ENDPOINT}?_page=${page}&_limit=${limit}`, options);
+            console.log('Response', response);
             const json = await response.json();
             return json;
         } catch (err) {
