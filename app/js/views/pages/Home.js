@@ -2,13 +2,42 @@ import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
 export default class Home {
     async render() {
-        let characters = await CharactersProvider.fetchCharacters(1, 3);
+        let characters = await CharactersProvider.fetchCharactersByPage(1, 3);
 
         if (!characters || characters.length === 0) {
             return `<h2>Aucun personnage trouvé.</h2>`;
         }
 
-        let html = characters.map(character =>
+        return /*html*/`
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">Personnages populaires</h1>
+                        <p class="lead text-body-secondary">Découvrez les personnages emblématiques des jeux vidéo.</p>
+                        <p>
+                            <a href="#/characters" class="btn btn-primary my-2">Voir tous les personnages</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulaire de recherche -->
+            <div class="container mb-4">
+                <form id="searchForm" action="#/characters" method="GET">
+                    <input type="text" name="search" id="searchInput" class="form-control" placeholder="Rechercher un personnage...">
+                    <button type="submit" class="btn btn-primary mt-2">Rechercher</button>
+                </form>
+            </div>
+
+            <h2>Les 3 premiers personnages</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                ${this.generateCharacterCards(characters)}
+            </div>
+        `;
+    }
+
+    generateCharacterCards(characters) {
+        return characters.map(character =>
             /*html*/`
             <div class="col">
                 <div class="card shadow-sm">
@@ -38,23 +67,5 @@ export default class Home {
             </div>
             `
         ).join('\n ');
-
-        return /*html*/`
-            <section class="py-5 text-center container">
-                <div class="row py-lg-5">
-                    <div class="col-lg-6 col-md-8 mx-auto">
-                        <h1 class="fw-light">Personnages populaires</h1>
-                        <p class="lead text-body-secondary">Découvrez les personnages emblématiques des jeux vidéo.</p>
-                        <p>
-                            <a href="#/characters" class="btn btn-primary my-2">Voir tous les personnages</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <h2>Les 3 premiers personnages</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                ${html}
-            </div>
-        `;
     }
 }
