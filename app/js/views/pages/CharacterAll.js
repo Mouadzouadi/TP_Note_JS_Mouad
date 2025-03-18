@@ -10,11 +10,19 @@ export default class CharacterAll {
         this.filterClass = urlParams.get('class') || '';
         this.sortCriterion = urlParams.get('sort') || 'name';
         this.characters = [];
+        this.showFavoritesOnly = false;
+
     }
 
     async render() {
         this.characters = await CharactersProvider.fetchCharacters();
         let filtered = this.characters;
+        if (this.showFavoritesOnly) {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            console.log(favorites);
+            filtered = filtered.filter(character => favorites.includes(character.id));
+            console.log(filtered);
+        }
 
         if (this.searchText) {
             filtered = filtered.filter(character =>
@@ -76,6 +84,9 @@ export default class CharacterAll {
                             <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
                                 + Détail sur ${character.name}
                             </a>
+                            <button class="btn btn-sm btn-outline-danger favorite-btn" data-id="${character.id}">
+                                <span class="heart-icon">${this.isFavorite(character.id) ? '❤️' : '🖤'}</span> Favoris
+                            </button>                        
                         </div>
                     </div>
                 </div>
@@ -98,6 +109,11 @@ export default class CharacterAll {
         ).join('');
 
         return /*html*/`
+            <div class="mb-3 text-end">
+                <button id="toggleFavorites" class="btn btn-outline-warning">
+                    ${this.showFavoritesOnly ? 'Voir tous les personnages' : 'Voir mes favoris'}
+                </button>
+            </div>
             <h2>Liste des personnages</h2>
             <div class="mb-3">
                 <label for="searchInput" class="form-label">Recherche</label>
@@ -167,6 +183,20 @@ export default class CharacterAll {
                 this.updateURL();
             }
         });
+        document.querySelectorAll('.favorite-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const characterId = event.currentTarget.getAttribute('data-id');
+                this.toggleFavorite(characterId);
+                this.updateContent()
+            });
+        });
+        document.getElementById("toggleFavorites")?.addEventListener("click", () => {
+            this.showFavoritesOnly = !this.showFavoritesOnly;
+            this.updateContent();
+        });
+        
+        
+        
     }
 
     updateURL() {
@@ -210,6 +240,23 @@ export default class CharacterAll {
         this.sortCriterion = event.target.value;
         this.updateURL();
     }
+    isFavorite(characterId) {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        return favorites.includes(characterId);
+    }
+    
+    toggleFavorite(characterId) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+        if (favorites.includes(characterId)) {
+            favorites = favorites.filter(id => id !== characterId);
+        } else {
+            favorites.push(characterId);
+        }
+    
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+    
 
     async resetUrl() {
         const url = new URL(window.location);
