@@ -6,16 +6,18 @@ export default class CharacterShow {
     async render() {
         let request = Utils.parseRequestURL();
         let post = await CharactersProvider.getCharacter(request.id);
+        console.log(post);
 
         if (!post) {
             return `<h2>Personnage introuvable.</h2>`;
         }
 
         const isFav = isFavorite(post.id);
-
-        let equipmentHTML = post.equipment.map(equip => `
-            <li><strong>${equip.name}</strong> (${equip.type}) - Attaque: ${equip.attack}, Magie: ${equip.magic}</li>
-        `).join('');
+        let equipments = await CharactersProvider.getEquipmentsByCharacter(post.equipment_ids);
+        console.log(equipments);
+        let equipmentHTML = equipments.length > 0 
+            ? equipments.map(equip => `<li>${equip.name} (${equip.type}) - Power: ${equip.power}</li>`).join("")
+            : "<p>Aucun équipement disponible.</p>";
 
         return /*html*/`
             <section class="section">
@@ -55,6 +57,4 @@ export default class CharacterShow {
             heartIcon.textContent = isFav ? '❤️' : '🖤';
         }
     }
-
-
 }

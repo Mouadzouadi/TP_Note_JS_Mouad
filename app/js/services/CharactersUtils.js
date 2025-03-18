@@ -10,12 +10,7 @@ export function generateCard(character, isFavorite, toggleFavorite) {
                     <p><strong>Classe :</strong> ${character.class}</p>
                     <p><strong>Niveau :</strong> ${character.level}</p>
                     <p><strong>Expérience :</strong> ${character.experience}</p>
-                    <h6>Équipement principal :</h6>
-                    <ul>
-                        ${character.equipment.map(equip => /*html*/`
-                            <li><strong>${equip.name}</strong> (${equip.type}) - Attaque: ${equip.attack}, Magie: ${equip.magic}</li>
-                        `).join('')}
-                    </ul>
+
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
                             + Détail sur ${character.name}

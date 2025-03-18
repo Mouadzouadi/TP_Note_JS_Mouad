@@ -42,28 +42,30 @@ export default class Home {
 
     generateCard(character) {
         return /*html*/`
-            <div class="card shadow-sm">
-                <div class="card-header text-center">
-                    <h5 class="card-title">${character.name}</h5>
-                </div>
-                <div class="card-body">
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                <h5 class="card-title">${character.name}</h5>
+                ${character.image ? 
+                    `<img src="/data/images/${character.image}" class="img-fluid" alt="" style="width: 15rem; height: 15rem; object-fit: cover; margin-top: 1rem; border-radius: 2%;">`
+                    : ''} <!-- Si image existe, on l'affiche, sinon on ne fait rien -->
+            </div>
+            <div class="card-body">
+                <div class="card-text">
                     <p><strong>Jeu :</strong> ${character.game}</p>
                     <p><strong>Classe :</strong> ${character.class}</p>
                     <p><strong>Niveau :</strong> ${character.level}</p>
-                    <h6>Équipement principal :</h6>
-                    <ul>
-                        ${character.equipment.map(equip => `
-                            <li><strong>${equip.name}</strong> (${equip.type}) - Attaque: ${equip.attack}, Magie: ${equip.magic}</li>
-                        `).join('')}
-                    </ul>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
-                            + Détail sur ${character.name}
-                        </a>
-                        ${this.generateFavoriteButton(character)}  <!-- Bouton de favori -->
-                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
+                        + Détail sur ${character.name}
+                    </a>
+                    ${this.generateFavoriteButton(character)}  <!-- Bouton de favori -->
                 </div>
             </div>
+        </div>
+
+
+
         `;
     }
 
