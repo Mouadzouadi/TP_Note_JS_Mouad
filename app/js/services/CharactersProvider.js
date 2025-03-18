@@ -29,10 +29,8 @@ export default class CharactersProvider {
                 const response = await fetch(`${ENDPOINT}?_page=${page}&_per_page=${limit}`, options);
                 const json = await response.json();
                 
-                // On suppose que la structure est maintenant sous `data`
-                const characters = json.data;  // Récupérer les personnages
+                const characters = json.data;
                 
-                // Pagination info
                 const pagination = {
                     first: json.first,
                     prev: json.prev,
