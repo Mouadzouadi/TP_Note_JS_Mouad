@@ -17,21 +17,21 @@ const routes = {
 
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
 const router = async () => {
-
-    // Lazy load view element:
-    const content = null || document.querySelector('#content');
-
-    // Get the parsed URl from the addressbar
-    let request = Utils.parseRequestURL()
-
-    // Parse the URL and if it has an id part, change it with the string ":id"
-    let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '')
-
-    let page = routes[parsedURL] ? new routes[parsedURL] : Error404
+    const content = document.querySelector('#content');
     
-    //await, car on attend que toutes les promesses soient résolues dans la méthode render
+
+    let request = Utils.parseRequestURL();
+    let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
+    
+    let page = routes[parsedURL] ? new routes[parsedURL]() : new Error404();
+
     content.innerHTML = await page.render();
-}
+
+    if (typeof page.postRender === "function") {
+        await page.postRender();
+    }
+};
+
 
 // Listen on hash change:
 window.addEventListener('hashchange', router);
