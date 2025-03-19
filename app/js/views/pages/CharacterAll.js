@@ -17,11 +17,14 @@ export default class CharacterAll {
     async render() {
         this.characters = await CharactersProvider.fetchCharacters();
         let filtered = this.characters;
+        
+        // Filtrage par favoris si demandé
         if (this.showFavoritesOnly) {
-            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const favorites = getFavorites();
             filtered = filtered.filter(character => favorites.includes(character.id));
         }
 
+        // Recherche
         if (this.searchText) {
             filtered = filtered.filter(character =>
                 character.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
@@ -30,6 +33,7 @@ export default class CharacterAll {
             );
         }
 
+        // Dropdowns de filtrage
         const allGames = [...new Set(filtered.map(character => character.game))];
         const allClasses = [...new Set(filtered.map(character => character.class))];
 
@@ -50,8 +54,10 @@ export default class CharacterAll {
                 .map(character => character.game))];
         }
 
+        // Tri
         filtered = this.sortCharacters(filtered);
 
+        // Pagination
         const startIndex = (this.currentPage - 1) * this.limit;
         const endIndex = startIndex + this.limit;
         const paginatedCharacters = filtered.slice(startIndex, endIndex);
@@ -61,13 +67,12 @@ export default class CharacterAll {
             next: endIndex < filtered.length
         };
 
+        // Génération des cartes
         let html = paginatedCharacters.map(character => generateCard(
             character,
             isFavorite(character.id),
-            (characterId) => {
-                toggleFavorite(characterId);
-                this.updateContent();
-            }
+            // Ici, on ne passe pas toggleFavorite dans le template, on gère le clic via postRender.
+            toggleFavorite
         )).join('');
 
         let paginationHtml = '';
@@ -140,10 +145,13 @@ export default class CharacterAll {
     }
 
     async postRender() {
+        // Pagination
         document.getElementById("prevPageBtn")?.addEventListener("click", () => this.goToPage('prev'));
         document.getElementById("nextPageBtn")?.addEventListener("click", () => this.goToPage('next'));
+        // Tri et réinitialisation
         document.getElementById("sortSelect")?.addEventListener("change", (event) => this.onSortChange(event));
         document.getElementById("resetUrl")?.addEventListener("click", () => this.resetUrl());
+        // Dropdowns
         document.getElementById("filterGameDropdown")?.addEventListener("change", (event) => {
             this.filterGame = event.target.value;
             this.filterClass = "";
@@ -154,26 +162,26 @@ export default class CharacterAll {
             this.filterGame = "";
             this.updateURL();
         });
+        // Recherche
         document.getElementById("searchInput")?.addEventListener("keyup", (event) => {
             if (event.key === "Enter") {
                 this.searchText = event.target.value;
                 this.updateURL();
             }
         });
+        // Bouton favoris : on attache un écouteur sur chaque bouton généré avec la classe "favorite-btn"
         document.querySelectorAll('.favorite-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const characterId = event.currentTarget.getAttribute('data-id');
-                this.toggleFavorite(characterId);
-                this.updateContent()
+                toggleFavorite(characterId);
+                this.updateContent();
             });
         });
+        // Toggle favoris global
         document.getElementById("toggleFavorites")?.addEventListener("click", () => {
             this.showFavoritesOnly = !this.showFavoritesOnly;
             this.updateContent();
         });
-        
-        
-        
     }
 
     updateURL() {
@@ -217,23 +225,6 @@ export default class CharacterAll {
         this.sortCriterion = event.target.value;
         this.updateURL();
     }
-    isFavorite(characterId) {
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        return favorites.includes(characterId);
-    }
-    
-    toggleFavorite(characterId) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
-        if (favorites.includes(characterId)) {
-            favorites = favorites.filter(id => id !== characterId);
-        } else {
-            favorites.push(characterId);
-        }
-    
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-    }
-    
 
     async resetUrl() {
         const url = new URL(window.location);
@@ -250,4 +241,3 @@ export default class CharacterAll {
         await this.updateContent();
     }
 }
-

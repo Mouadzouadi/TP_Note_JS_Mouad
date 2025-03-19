@@ -1,7 +1,6 @@
 import { generateCard, isFavorite, getFavorites, toggleFavorite, filterFavorites } from "/app/js/services/CharactersUtils.js";
 import CharactersProvider from "/app/js/services/CharactersProvider.js";
 
-
 export default class Home {
     async render() {
         const favorites = getFavorites();
@@ -29,7 +28,7 @@ export default class Home {
             contentHTML = /*html*/`
                 <h2 class="text-center">Vos Personnages favoris</h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    ${this.generateCharacterCards(allCharacters)}  <!-- Utilisation de la méthode existante -->
+                    ${this.generateCharacterCards(allCharacters)}
                 </div>
             `;
         }
@@ -40,53 +39,12 @@ export default class Home {
         `;
     }
 
-    generateCard(character) {
-        return /*html*/`
-        <div class="card shadow-sm">
-            <div class="card-header text-center">
-                <h5 class="card-title">${character.name}</h5>
-                ${character.image ? 
-                    `<img src="/data/images/${character.image}" class="img-fluid" alt="" style="width: 15rem; height: 15rem; object-fit: cover; margin-top: 1rem; border-radius: 2%;">`
-                    : ''} <!-- Si image existe, on l'affiche, sinon on ne fait rien -->
-            </div>
-            <div class="card-body">
-                <div class="card-text">
-                    <p><strong>Jeu :</strong> ${character.game}</p>
-                    <p><strong>Classe :</strong> ${character.class}</p>
-                    <p><strong>Niveau :</strong> ${character.level}</p>
-                </div>
-                <div class="d-flex justify-content-between align-items-center mt-3">
-                    <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
-                        + Détail sur ${character.name}
-                    </a>
-                    ${this.generateFavoriteButton(character)}  <!-- Bouton de favori -->
-                </div>
-            </div>
-        </div>
-
-
-
-        `;
-    }
-
-    generateCharacterCard(character) {
-        return /*html*/`
-            <div class="col">
-                ${this.generateCard(character)}
-            </div>
-        `;
-    }
-
-    generateFavoriteButton(character) {
-        return /*html*/`
-            <button id="favoriteButton-${character.id}" class="btn btn-outline-danger">
-                <span class="heart-icon">${isFavorite(character.id) ? '❤️' : '🖤'}</span> Favoris
-            </button>
-        `;
-    }
-
     generateCharacterCards(characters) {
-        return characters.map(character => this.generateCharacterCard(character)).join('\n ');
+        return characters.map(character => `
+            <div class="col">
+                ${generateCard(character, isFavorite(character.id), toggleFavorite)}
+            </div>
+        `).join('');
     }
 
     async postRender() {

@@ -78,7 +78,7 @@
       "level": 22,
       "experience": 11000,
       "equipment_ids": [22, 23, 24],
-      "image": "chief.webp"
+      "image": "master.webp"
     },
     {
       "id": 9,
@@ -102,7 +102,7 @@
     },
     {
       "id": 11,
-      "name": "Cloud Strife",
+      "name": "Kratos",
       "game": "God of War",
       "class": "God Slayer",
       "level": 25,
