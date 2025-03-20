@@ -1,4 +1,9 @@
 export function generateCard(character, isFavorite, toggleFavorite) {
+    const moyNotes = character.notes.length > 0 
+    ? Math.round((character.notes.reduce((acc, note) => acc + note, 0) / character.notes.length) * 10) / 10 
+    : 0;
+
+    const stars = generateStars(moyNotes);
     return /*html*/`
         <div class="card shadow-sm">
             <div class="card-header text-center">
@@ -13,6 +18,12 @@ export function generateCard(character, isFavorite, toggleFavorite) {
                     <p><strong>Jeu :</strong> ${character.game}</p>
                     <p><strong>Classe :</strong> ${character.class}</p>
                     <p><strong>Niveau :</strong> ${character.level}</p>
+
+                    <div class="rating">
+                        ${moyNotes > 0 ? stars : '<br style="line-height: 2.3rem;">'}
+
+                    </div>
+
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                     <a href="#/characters/${character.id}" class="btn btn-sm btn-outline-primary">
@@ -56,4 +67,11 @@ export function toggleFavorite(characterId) {
 
 export function filterFavorites(characters, favorites) {
     return characters.filter(character => favorites.includes(character.id));
+}
+export function generateStars(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        stars += `<span class="star ${i <= rating ? 'filled' : ''}" data-rating="${i}">☆</span>`;
+    }
+    return stars;
 }
