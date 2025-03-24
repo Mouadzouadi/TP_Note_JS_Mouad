@@ -67,20 +67,18 @@ export default class CharacterAll {
             next: endIndex < filtered.length
         };
 
-        // Génération des cartes
         let html = paginatedCharacters.map(character => generateCard(
             character,
             isFavorite(character.id),
-            // Ici, on ne passe pas toggleFavorite dans le template, on gère le clic via postRender.
             toggleFavorite
         )).join('');
 
         let paginationHtml = '';
         if (pagination.prev) {
-            paginationHtml += `<button id="prevPageBtn" class="btn btn-primary">Page Précédente</button>`;
+            paginationHtml += `<button class="btn btn-primary" data-action="prevPage">Page Précédente</button>`;
         }
         if (pagination.next) {
-            paginationHtml += `<button id="nextPageBtn" class="btn btn-primary">Page Suivante</button>`;
+            paginationHtml += `<button class="btn btn-primary" data-action="nextPage">Page Suivante</button>`;
         }
 
         const gameDropdownOptions = filteredGames.map(game =>
@@ -92,7 +90,7 @@ export default class CharacterAll {
 
         return /*html*/`
             <div class="mb-3 text-end">
-                <button id="toggleFavorites" class="btn btn-outline-warning">
+                <button class="btn btn-outline-warning" data-action="toggleFavorites">
                     ${this.showFavoritesOnly ? 'Voir tous les personnages' : 'Voir mes favoris'}
                 </button>
             </div>
@@ -146,30 +144,29 @@ export default class CharacterAll {
 
     async postRender() {
         // Pagination
-        document.getElementById("prevPageBtn")?.addEventListener("click", () => this.goToPage('prev'));
-        document.getElementById("nextPageBtn")?.addEventListener("click", () => this.goToPage('next'));
+        document.querySelector("[data-action='prevPage']")?.addEventListener("click", () => this.goToPage('prev'));
+        document.querySelector("[data-action='nextPage']")?.addEventListener("click", () => this.goToPage('next'));
         // Tri et réinitialisation
-        document.getElementById("sortSelect")?.addEventListener("change", (event) => this.onSortChange(event));
-        document.getElementById("resetUrl")?.addEventListener("click", () => this.resetUrl());
+        document.querySelector("#sortSelect")?.addEventListener("change", (event) => this.onSortChange(event));
+        document.querySelector("#resetUrl")?.addEventListener("click", () => this.resetUrl());
         // Dropdowns
-        document.getElementById("filterGameDropdown")?.addEventListener("change", (event) => {
+        document.querySelector("#filterGameDropdown")?.addEventListener("change", (event) => {
             this.filterGame = event.target.value;
             this.filterClass = "";
             this.updateURL();
         });
-        document.getElementById("filterClassDropdown")?.addEventListener("change", (event) => {
+        document.querySelector("#filterClassDropdown")?.addEventListener("change", (event) => {
             this.filterClass = event.target.value;
             this.filterGame = "";
             this.updateURL();
         });
         // Recherche
-        document.getElementById("searchInput")?.addEventListener("keyup", (event) => {
+        document.querySelector("#searchInput")?.addEventListener("keyup", (event) => {
             if (event.key === "Enter") {
                 this.searchText = event.target.value;
                 this.updateURL();
             }
         });
-        // Bouton favoris : on attache un écouteur sur chaque bouton généré avec la classe "favorite-btn"
         document.querySelectorAll('.favorite-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const characterId = event.currentTarget.getAttribute('data-id');
@@ -177,8 +174,7 @@ export default class CharacterAll {
                 this.updateContent();
             });
         });
-        // Toggle favoris global
-        document.getElementById("toggleFavorites")?.addEventListener("click", () => {
+        document.querySelector("[data-action='toggleFavorites']")?.addEventListener("click", () => {
             this.showFavoritesOnly = !this.showFavoritesOnly;
             this.updateContent();
         });

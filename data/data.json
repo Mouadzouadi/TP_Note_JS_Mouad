@@ -1,400 +1,1062 @@
 {
   "characters": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Arthas Menethil",
       "game": "Warcraft",
       "class": "Paladin",
       "level": 10,
       "experience": 5000,
-      "equipment_ids": [1, 2, 3],
-      "image": "Arthas.webp"
+      "equipment_ids": [
+        1,
+        2,
+        3
+      ],
+      "image": "Arthas.webp",
+      "notes": []
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Geralt of Rivia",
       "game": "The Witcher",
       "class": "Witcher",
       "level": 15,
       "experience": 8000,
-      "equipment_ids": [4, 5, 6],
-      "image": "geralt.webp"
+      "equipment_ids": [
+        4,
+        5,
+        6
+      ],
+      "image": "geralt.webp",
+      "notes": [
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
+        1,
+        3,
+        5,
+        1,
+        3,
+        1,
+        1,
+        2,
+        3,
+        4,
+        5,
+        2,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Link",
       "game": "The Legend of Zelda",
       "class": "Hero",
       "level": 12,
       "experience": 6000,
-      "equipment_ids": [7, 8, 9],
-      "image": "link.webp"
+      "equipment_ids": [
+        7,
+        8,
+        9
+      ],
+      "image": "link.webp",
+      "notes": []
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Lara Croft",
       "game": "Tomb Raider",
       "class": "Adventurer",
       "level": 8,
       "experience": 4000,
-      "equipment_ids": [10, 11, 12],
-      "image": "croft.webp"
+      "equipment_ids": [
+        10,
+        11,
+        12
+      ],
+      "image": "croft.webp",
+      "notes": []
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mario",
       "game": "Super Mario",
       "class": "Plumber",
       "level": 10,
       "experience": 5000,
-      "equipment_ids": [13, 14, 15],
-      "image": "mario.webp"
+      "equipment_ids": [
+        13,
+        14,
+        15
+      ],
+      "image": "mario.webp",
+      "notes": []
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Ezio Auditore",
       "game": "Assassin's Creed",
       "class": "Assassin",
       "level": 18,
       "experience": 9000,
-      "equipment_ids": [16, 17, 18],
-      "image": "ezio.webp"
+      "equipment_ids": [
+        16,
+        17,
+        18
+      ],
+      "image": "ezio.webp",
+      "notes": [
+        5,
+        1,
+        5,
+        5,
+        5
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Samus Aran",
       "game": "Metroid",
       "class": "Bounty Hunter",
       "level": 20,
       "experience": 10000,
-      "equipment_ids": [19, 20, 21],
-      "image": "samus.webp"
+      "equipment_ids": [
+        19,
+        20,
+        21
+      ],
+      "image": "samus.webp",
+      "notes": []
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Master Chief",
       "game": "Halo",
       "class": "Spartan",
       "level": 22,
       "experience": 11000,
-      "equipment_ids": [22, 23, 24],
-      "image": "master.webp"
+      "equipment_ids": [
+        22,
+        23,
+        24
+      ],
+      "image": "master.webp",
+      "notes": []
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Solid Snake",
       "game": "Metal Gear",
       "class": "Spy",
       "level": 17,
       "experience": 8500,
-      "equipment_ids": [25, 26, 27],
-      "image": "snake.webp"
+      "equipment_ids": [
+        25,
+        26,
+        27
+      ],
+      "image": "snake.webp",
+      "notes": []
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Cloud Strife",
       "game": "Final Fantasy VII",
       "class": "Soldier",
       "level": 19,
       "experience": 9500,
-      "equipment_ids": [28, 29, 30],
-      "image": "cloud.webp"
+      "equipment_ids": [
+        28,
+        29,
+        30
+      ],
+      "image": "cloud.webp",
+      "notes": [
+        1
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Kratos",
       "game": "God of War",
       "class": "God Slayer",
       "level": 25,
       "experience": 12000,
-      "equipment_ids": [31, 32, 33],
-      "image": "kratos.webp"
+      "equipment_ids": [
+        31,
+        32,
+        33
+      ],
+      "image": "kratos.webp",
+      "notes": [
+        5
+      ]
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Doom Slayer",
       "game": "DOOM",
       "class": "Demon Hunter",
       "level": 30,
       "experience": 15000,
-      "equipment_ids": [34, 35, 36],
-      "image": "doom.webp"
+      "equipment_ids": [
+        34,
+        35,
+        36
+      ],
+      "image": "doom.webp",
+      "notes": []
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Ryu",
       "game": "Street Fighter",
       "class": "Martial Artist",
       "level": 14,
       "experience": 7000,
-      "equipment_ids": [37, 38, 39],
-      "image": "ryu.webp"
+      "equipment_ids": [
+        37,
+        38,
+        39
+      ],
+      "image": "ryu.webp",
+      "notes": []
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Sub-Zero",
       "game": "Mortal Kombat",
       "class": "Ninja",
       "level": 16,
       "experience": 7500,
-      "equipment_ids": [40, 41, 42],
-      "image": "sub-zero.webp"
+      "equipment_ids": [
+        40,
+        41,
+        42
+      ],
+      "image": "sub-zero.webp",
+      "notes": []
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Sonic",
       "game": "Sonic the Hedgehog",
       "class": "Speedster",
       "level": 13,
       "experience": 6500,
-      "equipment_ids": [43, 44, 45],
-      "image": "sonic.webp"
+      "equipment_ids": [
+        43,
+        44,
+        45
+      ],
+      "image": "sonic.webp",
+      "notes": []
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Bayonetta",
       "game": "Bayonetta",
       "class": "Witch",
       "level": 21,
       "experience": 10500,
-      "equipment_ids": [46, 47, 48],
-      "image": "bayonetta.webp"
+      "equipment_ids": [
+        46,
+        47,
+        48
+      ],
+      "image": "bayonetta.webp",
+      "notes": []
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Arthur Morgan",
       "game": "Red Dead Redemption 2",
       "class": "Outlaw",
       "level": 17,
       "experience": 9000,
-      "equipment_ids": [49, 50, 51],
-      "image": "arthur.webp"
+      "equipment_ids": [
+        49,
+        50,
+        51
+      ],
+      "image": "arthur.webp",
+      "notes": [
+        4,
+        3,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Aloy",
       "game": "Horizon Zero Dawn",
       "class": "Hunter",
       "level": 15,
       "experience": 8200,
-      "equipment_ids": [52, 53, 54],
-      "image": "Aloy.webp"
+      "equipment_ids": [
+        52,
+        53,
+        54
+      ],
+      "image": "Aloy.webp",
+      "notes": [
+        4.2,
+        2.6
+      ]
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Jin Sakai",
       "game": "Ghost of Tsushima",
       "class": "Samurai",
       "level": 20,
       "experience": 11000,
-      "equipment_ids": [55, 56, 57],
-      "image": "jin.webp"
+      "equipment_ids": [
+        55,
+        56,
+        57
+      ],
+      "image": "jin.webp",
+      "notes": [
+        4,
+        5
+      ]
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Gordon Freeman",
       "game": "Half-Life",
       "class": "Scientist",
       "level": 10,
       "experience": 5000,
-      "equipment_ids": [58, 59, 60],
-      "image": "freeman.webp"
+      "equipment_ids": [
+        58,
+        59,
+        60
+      ],
+      "image": "freeman.webp",
+      "notes": []
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Shepard",
       "game": "Mass Effect",
       "class": "Commander",
       "level": 18,
       "experience": 9500,
-      "equipment_ids": [61, 62, 63],
-      "image": "shepard.webp"
+      "equipment_ids": [
+        61,
+        62,
+        63
+      ],
+      "image": "shepard.webp",
+      "notes": []
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Steve",
       "game": "Minecraft",
       "class": "Builder",
       "level": 9,
       "experience": 4500,
-      "equipment_ids": [64, 65, 66],
-      "image": "steve.webp"
+      "equipment_ids": [
+        64,
+        65,
+        66
+      ],
+      "image": "steve.webp",
+      "notes": []
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Leon Kennedy",
       "game": "Resident Evil",
       "class": "Agent",
       "level": 16,
       "experience": 7700,
-      "equipment_ids": [67, 68, 69],
-      "image": "leon.webp"
+      "equipment_ids": [
+        67,
+        68,
+        69
+      ],
+      "image": "leon.webp",
+      "notes": []
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Travis Touchdown",
       "game": "No More Heroes",
       "class": "Assassin",
       "level": 15,
       "experience": 8200,
-      "equipment_ids": [70, 71, 72],
-      "image": "travis.webp"
+      "equipment_ids": [
+        70,
+        71,
+        72
+      ],
+      "image": "travis.webp",
+      "notes": []
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Dante",
       "game": "Devil May Cry",
       "class": "Demon Hunter",
       "level": 22,
       "experience": 11200,
-      "equipment_ids": [73, 74, 75],
-      "image": "dante.webp"
+      "equipment_ids": [
+        73,
+        74,
+        75
+      ],
+      "image": "dante.webp",
+      "notes": []
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Trevor Philips",
       "game": "GTA V",
       "class": "Criminal",
       "level": 14,
       "experience": 6800,
-      "equipment_ids": [76, 77, 78],
-      "image": "trevor.webp"
+      "equipment_ids": [
+        76,
+        77,
+        78
+      ],
+      "image": "trevor.webp",
+      "notes": []
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Spyro",
       "game": "Spyro the Dragon",
       "class": "Dragon",
       "level": 11,
       "experience": 5700,
-      "equipment_ids": [79, 80, 81],
-      "image": "spyro.webp"
+      "equipment_ids": [
+        79,
+        80,
+        81
+      ],
+      "image": "spyro.webp",
+      "notes": []
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Sam Fisher",
       "game": "Splinter Cell",
       "class": "Spy",
       "level": 18,
       "experience": 9100,
-      "equipment_ids": [82, 83, 84],
-      "image": "fisher.webp"
+      "equipment_ids": [
+        82,
+        83,
+        84
+      ],
+      "image": "fisher.webp",
+      "notes": []
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Nathan Drake",
       "game": "Uncharted",
       "class": "Treasure Hunter",
       "level": 17,
       "experience": 8800,
-      "equipment_ids": [85, 86, 87],
-      "image": "drake.webp"
+      "equipment_ids": [
+        85,
+        86,
+        87
+      ],
+      "image": "drake.webp",
+      "notes": [
+        5
+      ]
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Isaac Clarke",
       "game": "Dead Space",
       "class": "Engineer",
       "level": 15,
       "experience": 7900,
-      "equipment_ids": [88, 89, 90],
-      "image": "issac.webp"
+      "equipment_ids": [
+        88,
+        89,
+        90
+      ],
+      "image": "issac.webp",
+      "notes": []
     }
   ],
-
   "equipments": [
-      { "id": 1, "name": "Frostmourne", "type": "Sword", "power": 100 },
-      { "id": 2, "name": "Paladin Armor", "type": "Armor", "power": 50 },
-      { "id": 3, "name": "Holy Shield", "type": "Shield", "power": 40 },
-      { "id": 4, "name": "Silver Sword", "type": "Sword", "power": 80 },
-      { "id": 5, "name": "Witcher Armor", "type": "Armor", "power": 60 },
-      { "id": 6, "name": "Crossbow", "type": "Ranged Weapon", "power": 30 },
-      { "id": 7, "name": "Master Sword", "type": "Sword", "power": 90 },
-      { "id": 8, "name": "Hylian Shield", "type": "Shield", "power": 50 },
-      { "id": 9, "name": "Hookshot", "type": "Gadget", "power": 20 },
-      { "id": 10, "name": "Dual Pistols", "type": "Firearms", "power": 60 },
-      { "id": 11, "name": "Explorer Backpack", "type": "Utility", "power": 20 },
-      { "id": 12, "name": "Climbing Axe", "type": "Tool", "power": 30 },
-      { "id": 13, "name": "Fire Flower", "type": "Magic", "power": 40 },
-      { "id": 14, "name": "Super Star", "type": "Buff", "power": 100 },
-      { "id": 15, "name": "Mushroom", "type": "Healing", "power": 30 },
-      { "id": 16, "name": "Hidden Blade", "type": "Dagger", "power": 75 },
-      { "id": 17, "name": "Assassin Robe", "type": "Armor", "power": 50 },
-      { "id": 18, "name": "Smoke Bombs", "type": "Gadget", "power": 20 },
-      { "id": 19, "name": "Power Suit", "type": "Armor", "power": 80 },
-      { "id": 20, "name": "Arm Cannon", "type": "Blaster", "power": 90 },
-      { "id": 21, "name": "Missiles", "type": "Explosive", "power": 100 },
-      { "id": 22, "name": "Energy Sword", "type": "Sword", "power": 85 },
-      { "id": 23, "name": "MJOLNIR Armor", "type": "Armor", "power": 95 },
-      { "id": 24, "name": "Plasma Grenades", "type": "Explosive", "power": 75 },
-      { "id": 25, "name": "Stealth Suit", "type": "Armor", "power": 70 },
-      { "id": 26, "name": "SOCOM Pistol", "type": "Firearms", "power": 50 },
-      { "id": 27, "name": "Cardboard Box", "type": "Utility", "power": 10 },
-      { "id": 28, "name": "Buster Sword", "type": "Sword", "power": 100 },
-      { "id": 29, "name": "Soldier Armor", "type": "Armor", "power": 60 },
-      { "id": 30, "name": "Materia", "type": "Magic", "power": 50 },
-      { "id": 31, "name": "Blades of Chaos", "type": "Weapon", "power": 120 },
-      { "id": 32, "name": "Spartan Armor", "type": "Armor", "power": 80 },
-      { "id": 33, "name": "Leviathan Axe", "type": "Axe", "power": 110 },
-      { "id": 34, "name": "Super Shotgun", "type": "Firearms", "power": 95 },
-      { "id": 35, "name": "Praetor Suit", "type": "Armor", "power": 85 },
-      { "id": 36, "name": "BFG 9000", "type": "Energy Weapon", "power": 200 },
-      { "id": 37, "name": "Hadouken", "type": "Magic", "power": 90 },
-      { "id": 38, "name": "Karate Gi", "type": "Armor", "power": 40 },
-      { "id": 39, "name": "Black Belt", "type": "Buff", "power": 20 },
-      { "id": 40, "name": "Ice Sword", "type": "Sword", "power": 85 },
-      { "id": 41, "name": "Ninja Mask", "type": "Armor", "power": 45 },
-      { "id": 42, "name": "Kunai", "type": "Dagger", "power": 60 },
-      { "id": 43, "name": "Speed Shoes", "type": "Buff", "power": 80 },
-      { "id": 44, "name": "Golden Rings", "type": "Currency", "power": 10 },
-      { "id": 45, "name": "Spin Dash", "type": "Ability", "power": 70 },
-      { "id": 46, "name": "Scarborough Fair", "type": "Pistols", "power": 100 },
-      { "id": 47, "name": "Umbra Armor", "type": "Armor", "power": 60 },
-      { "id": 48, "name": "Witch Time", "type": "Ability", "power": 90 },
-      { "id": 49, "name": "Revolver", "type": "Firearms", "power": 70 },
-      { "id": 50, "name": "Outlaw Duster", "type": "Armor", "power": 40 },
-      { "id": 51, "name": "Horse Saddle", "type": "Utility", "power": 30 },
-      { "id": 52, "name": "Hunter Bow", "type": "Bow", "power": 80 },
-      { "id": 53, "name": "Aloy's Armor", "type": "Armor", "power": 50 },
-      { "id": 54, "name": "Focus Device", "type": "Gadget", "power": 30 },
-      { "id": 55, "name": "Katana", "type": "Sword", "power": 95 },
-      { "id": 56, "name": "Samurai Armor", "type": "Armor", "power": 70 },
-      { "id": 57, "name": "Kunai", "type": "Dagger", "power": 60 },
-      { "id": 58, "name": "Crowbar", "type": "Melee", "power": 30 },
-      { "id": 59, "name": "HEV Suit", "type": "Armor", "power": 50 },
-      { "id": 60, "name": "Gravity Gun", "type": "Energy Weapon", "power": 80 },{ "id": 61, "name": "Portal Gun", "type": "Gadget", "power": 75 },
-      { "id": 62, "name": "Long Fall Boots", "type": "Armor", "power": 50 },
-      { "id": 63, "name": "Crowbar of Doom", "type": "Melee", "power": 40 },
-      { "id": 64, "name": "Laser Rifle", "type": "Firearms", "power": 90 },
-      { "id": 65, "name": "Combat Knife", "type": "Dagger", "power": 60 },
-      { "id": 66, "name": "Sniper Rifle", "type": "Firearms", "power": 100 },
-      { "id": 67, "name": "Tesla Cannon", "type": "Energy Weapon", "power": 120 },
-      { "id": 68, "name": "Power Gauntlets", "type": "Gloves", "power": 80 },
-      { "id": 69, "name": "Dragon Slayer", "type": "Sword", "power": 150 },
-      { "id": 70, "name": "Cybernetic Eye", "type": "Gadget", "power": 60 },
-      { "id": 71, "name": "Energy Shield", "type": "Shield", "power": 90 },
-      { "id": 72, "name": "Shadow Cloak", "type": "Armor", "power": 70 },
-      { "id": 73, "name": "Inferno Gauntlets", "type": "Gloves", "power": 100 },
-      { "id": 74, "name": "Demonic Scythe", "type": "Scythe", "power": 130 },
-      { "id": 75, "name": "Phoenix Feather", "type": "Healing", "power": 50 },
-      { "id": 76, "name": "Grappling Hook", "type": "Gadget", "power": 50 },
-      { "id": 77, "name": "Nuclear Warhead", "type": "Explosive", "power": 300 },
-      { "id": 78, "name": "Warp Drive", "type": "Technology", "power": 200 },
-      { "id": 79, "name": "Lightsaber", "type": "Sword", "power": 180 },
-      { "id": 80, "name": "Force Field Generator", "type": "Gadget", "power": 100 },
-      { "id": 81, "name": "Railgun", "type": "Firearms", "power": 150 },
-      { "id": 82, "name": "Stealth Generator", "type": "Gadget", "power": 90 },
-      { "id": 83, "name": "Gravity Boots", "type": "Armor", "power": 60 },
-      { "id": 84, "name": "EMP Grenade", "type": "Explosive", "power": 80 },
-      { "id": 85, "name": "Holographic Decoy", "type": "Gadget", "power": 40 },
-      { "id": 86, "name": "Void Blade", "type": "Sword", "power": 140 },
-      { "id": 87, "name": "Energy Core", "type": "Technology", "power": 110 },
-      { "id": 88, "name": "Time Manipulator", "type": "Gadget", "power": 200 },
-      { "id": 89, "name": "Exo-Suit", "type": "Armor", "power": 150 },
-      { "id": 90, "name": "Doom Hammer", "type": "Hammer", "power": 160 }
-    ]
-  }
-  
-  
-  
-
+    {
+      "id": "1",
+      "name": "Frostmourne",
+      "type": "Sword",
+      "power": 100
+    },
+    {
+      "id": "2",
+      "name": "Paladin Armor",
+      "type": "Armor",
+      "power": 50
+    },
+    {
+      "id": "3",
+      "name": "Holy Shield",
+      "type": "Shield",
+      "power": 40
+    },
+    {
+      "id": "4",
+      "name": "Silver Sword",
+      "type": "Sword",
+      "power": 80
+    },
+    {
+      "id": "5",
+      "name": "Witcher Armor",
+      "type": "Armor",
+      "power": 60
+    },
+    {
+      "id": "6",
+      "name": "Crossbow",
+      "type": "Ranged Weapon",
+      "power": 30
+    },
+    {
+      "id": "7",
+      "name": "Master Sword",
+      "type": "Sword",
+      "power": 90
+    },
+    {
+      "id": "8",
+      "name": "Hylian Shield",
+      "type": "Shield",
+      "power": 50
+    },
+    {
+      "id": "9",
+      "name": "Hookshot",
+      "type": "Gadget",
+      "power": 20
+    },
+    {
+      "id": "10",
+      "name": "Dual Pistols",
+      "type": "Firearms",
+      "power": 60
+    },
+    {
+      "id": "11",
+      "name": "Explorer Backpack",
+      "type": "Utility",
+      "power": 20
+    },
+    {
+      "id": "12",
+      "name": "Climbing Axe",
+      "type": "Tool",
+      "power": 30
+    },
+    {
+      "id": "13",
+      "name": "Fire Flower",
+      "type": "Magic",
+      "power": 40
+    },
+    {
+      "id": "14",
+      "name": "Super Star",
+      "type": "Buff",
+      "power": 100
+    },
+    {
+      "id": "15",
+      "name": "Mushroom",
+      "type": "Healing",
+      "power": 30
+    },
+    {
+      "id": "16",
+      "name": "Hidden Blade",
+      "type": "Dagger",
+      "power": 75
+    },
+    {
+      "id": "17",
+      "name": "Assassin Robe",
+      "type": "Armor",
+      "power": 50
+    },
+    {
+      "id": "18",
+      "name": "Smoke Bombs",
+      "type": "Gadget",
+      "power": 20
+    },
+    {
+      "id": "19",
+      "name": "Power Suit",
+      "type": "Armor",
+      "power": 80
+    },
+    {
+      "id": "20",
+      "name": "Arm Cannon",
+      "type": "Blaster",
+      "power": 90
+    },
+    {
+      "id": "21",
+      "name": "Missiles",
+      "type": "Explosive",
+      "power": 100
+    },
+    {
+      "id": "22",
+      "name": "Energy Sword",
+      "type": "Sword",
+      "power": 85
+    },
+    {
+      "id": "23",
+      "name": "MJOLNIR Armor",
+      "type": "Armor",
+      "power": 95
+    },
+    {
+      "id": "24",
+      "name": "Plasma Grenades",
+      "type": "Explosive",
+      "power": 75
+    },
+    {
+      "id": "25",
+      "name": "Stealth Suit",
+      "type": "Armor",
+      "power": 70
+    },
+    {
+      "id": "26",
+      "name": "SOCOM Pistol",
+      "type": "Firearms",
+      "power": 50
+    },
+    {
+      "id": "27",
+      "name": "Cardboard Box",
+      "type": "Utility",
+      "power": 10
+    },
+    {
+      "id": "28",
+      "name": "Buster Sword",
+      "type": "Sword",
+      "power": 100
+    },
+    {
+      "id": "29",
+      "name": "Soldier Armor",
+      "type": "Armor",
+      "power": 60
+    },
+    {
+      "id": "30",
+      "name": "Materia",
+      "type": "Magic",
+      "power": 50
+    },
+    {
+      "id": "31",
+      "name": "Blades of Chaos",
+      "type": "Weapon",
+      "power": 120
+    },
+    {
+      "id": "32",
+      "name": "Spartan Armor",
+      "type": "Armor",
+      "power": 80
+    },
+    {
+      "id": "33",
+      "name": "Leviathan Axe",
+      "type": "Axe",
+      "power": 110
+    },
+    {
+      "id": "34",
+      "name": "Super Shotgun",
+      "type": "Firearms",
+      "power": 95
+    },
+    {
+      "id": "35",
+      "name": "Praetor Suit",
+      "type": "Armor",
+      "power": 85
+    },
+    {
+      "id": "36",
+      "name": "BFG 9000",
+      "type": "Energy Weapon",
+      "power": 200
+    },
+    {
+      "id": "37",
+      "name": "Hadouken",
+      "type": "Magic",
+      "power": 90
+    },
+    {
+      "id": "38",
+      "name": "Karate Gi",
+      "type": "Armor",
+      "power": 40
+    },
+    {
+      "id": "39",
+      "name": "Black Belt",
+      "type": "Buff",
+      "power": 20
+    },
+    {
+      "id": "40",
+      "name": "Ice Sword",
+      "type": "Sword",
+      "power": 85
+    },
+    {
+      "id": "41",
+      "name": "Ninja Mask",
+      "type": "Armor",
+      "power": 45
+    },
+    {
+      "id": "42",
+      "name": "Kunai",
+      "type": "Dagger",
+      "power": 60
+    },
+    {
+      "id": "43",
+      "name": "Speed Shoes",
+      "type": "Buff",
+      "power": 80
+    },
+    {
+      "id": "44",
+      "name": "Golden Rings",
+      "type": "Currency",
+      "power": 10
+    },
+    {
+      "id": "45",
+      "name": "Spin Dash",
+      "type": "Ability",
+      "power": 70
+    },
+    {
+      "id": "46",
+      "name": "Scarborough Fair",
+      "type": "Pistols",
+      "power": 100
+    },
+    {
+      "id": "47",
+      "name": "Umbra Armor",
+      "type": "Armor",
+      "power": 60
+    },
+    {
+      "id": "48",
+      "name": "Witch Time",
+      "type": "Ability",
+      "power": 90
+    },
+    {
+      "id": "49",
+      "name": "Revolver",
+      "type": "Firearms",
+      "power": 70
+    },
+    {
+      "id": "50",
+      "name": "Outlaw Duster",
+      "type": "Armor",
+      "power": 40
+    },
+    {
+      "id": "51",
+      "name": "Horse Saddle",
+      "type": "Utility",
+      "power": 30
+    },
+    {
+      "id": "52",
+      "name": "Hunter Bow",
+      "type": "Bow",
+      "power": 80
+    },
+    {
+      "id": "53",
+      "name": "Aloy's Armor",
+      "type": "Armor",
+      "power": 50
+    },
+    {
+      "id": "54",
+      "name": "Focus Device",
+      "type": "Gadget",
+      "power": 30
+    },
+    {
+      "id": "55",
+      "name": "Katana",
+      "type": "Sword",
+      "power": 95
+    },
+    {
+      "id": "56",
+      "name": "Samurai Armor",
+      "type": "Armor",
+      "power": 70
+    },
+    {
+      "id": "57",
+      "name": "Kunai",
+      "type": "Dagger",
+      "power": 60
+    },
+    {
+      "id": "58",
+      "name": "Crowbar",
+      "type": "Melee",
+      "power": 30
+    },
+    {
+      "id": "59",
+      "name": "HEV Suit",
+      "type": "Armor",
+      "power": 50
+    },
+    {
+      "id": "60",
+      "name": "Gravity Gun",
+      "type": "Energy Weapon",
+      "power": 80
+    },
+    {
+      "id": "61",
+      "name": "Portal Gun",
+      "type": "Gadget",
+      "power": 75
+    },
+    {
+      "id": "62",
+      "name": "Long Fall Boots",
+      "type": "Armor",
+      "power": 50
+    },
+    {
+      "id": "63",
+      "name": "Crowbar of Doom",
+      "type": "Melee",
+      "power": 40
+    },
+    {
+      "id": "64",
+      "name": "Laser Rifle",
+      "type": "Firearms",
+      "power": 90
+    },
+    {
+      "id": "65",
+      "name": "Combat Knife",
+      "type": "Dagger",
+      "power": 60
+    },
+    {
+      "id": "66",
+      "name": "Sniper Rifle",
+      "type": "Firearms",
+      "power": 100
+    },
+    {
+      "id": "67",
+      "name": "Tesla Cannon",
+      "type": "Energy Weapon",
+      "power": 120
+    },
+    {
+      "id": "68",
+      "name": "Power Gauntlets",
+      "type": "Gloves",
+      "power": 80
+    },
+    {
+      "id": "69",
+      "name": "Dragon Slayer",
+      "type": "Sword",
+      "power": 150
+    },
+    {
+      "id": "70",
+      "name": "Cybernetic Eye",
+      "type": "Gadget",
+      "power": 60
+    },
+    {
+      "id": "71",
+      "name": "Energy Shield",
+      "type": "Shield",
+      "power": 90
+    },
+    {
+      "id": "72",
+      "name": "Shadow Cloak",
+      "type": "Armor",
+      "power": 70
+    },
+    {
+      "id": "73",
+      "name": "Inferno Gauntlets",
+      "type": "Gloves",
+      "power": 100
+    },
+    {
+      "id": "74",
+      "name": "Demonic Scythe",
+      "type": "Scythe",
+      "power": 130
+    },
+    {
+      "id": "75",
+      "name": "Phoenix Feather",
+      "type": "Healing",
+      "power": 50
+    },
+    {
+      "id": "76",
+      "name": "Grappling Hook",
+      "type": "Gadget",
+      "power": 50
+    },
+    {
+      "id": "77",
+      "name": "Nuclear Warhead",
+      "type": "Explosive",
+      "power": 300
+    },
+    {
+      "id": "78",
+      "name": "Warp Drive",
+      "type": "Technology",
+      "power": 200
+    },
+    {
+      "id": "79",
+      "name": "Lightsaber",
+      "type": "Sword",
+      "power": 180
+    },
+    {
+      "id": "80",
+      "name": "Force Field Generator",
+      "type": "Gadget",
+      "power": 100
+    },
+    {
+      "id": "81",
+      "name": "Railgun",
+      "type": "Firearms",
+      "power": 150
+    },
+    {
+      "id": "82",
+      "name": "Stealth Generator",
+      "type": "Gadget",
+      "power": 90
+    },
+    {
+      "id": "83",
+      "name": "Gravity Boots",
+      "type": "Armor",
+      "power": 60
+    },
+    {
+      "id": "84",
+      "name": "EMP Grenade",
+      "type": "Explosive",
+      "power": 80
+    },
+    {
+      "id": "85",
+      "name": "Holographic Decoy",
+      "type": "Gadget",
+      "power": 40
+    },
+    {
+      "id": "86",
+      "name": "Void Blade",
+      "type": "Sword",
+      "power": 140
+    },
+    {
+      "id": "87",
+      "name": "Energy Core",
+      "type": "Technology",
+      "power": 110
+    },
+    {
+      "id": "88",
+      "name": "Time Manipulator",
+      "type": "Gadget",
+      "power": 200
+    },
+    {
+      "id": "89",
+      "name": "Exo-Suit",
+      "type": "Armor",
+      "power": 150
+    },
+    {
+      "id": "90",
+      "name": "Doom Hammer",
+      "type": "Hammer",
+      "power": 160
+    }
+  ]
+}

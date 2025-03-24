@@ -81,6 +81,33 @@ export default class CharactersProvider {
             return [];
         }
     }
+    static addNote = async (id, note) => {
+        try {
+            const response = await fetch(`${ENDPOINT}/characters/${id}`);
+            const character = await response.json();
+    
+            character.notes.push(note);
+    
+            const updateResponse = await fetch(`${ENDPOINT}/characters/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ notes: character.notes })
+            });
+    
+            if (!updateResponse.ok) {
+                throw new Error(`Erreur HTTP: ${updateResponse.status}`);
+            }
+    
+            const updatedCharacter = await updateResponse.json();
+            return updatedCharacter;
+        } catch (err) {
+            console.error('Error adding note', err);
+        }
+    }
     
     
 }
+    
+

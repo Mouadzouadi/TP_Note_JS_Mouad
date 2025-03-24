@@ -1,7 +1,7 @@
 import Home from '/app/js/views/pages/Home.js';
 import CharacterAll from '/app/js/views/pages/CharacterAll.js';
 import CharacterShow from '/app/js/views/pages/CharacterShow.js';
-import About from '/app/js/views/pages/About.js';
+import Bagarre from '/app/js/views/pages/Bagarre.js';
 import Error404 from '/app/js/views/pages/Error404.js';
 
 import Utils from '/app/js/services/Utils.js';
@@ -9,7 +9,7 @@ import Utils from '/app/js/services/Utils.js';
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
     '/'                     : Home,
-    '/about'                : About,
+    '/bagarre'                : Bagarre,
     '/characters'           : CharacterAll,
     '/characters/:id'       : CharacterShow
 };

@@ -50,7 +50,7 @@ export default class Home {
     async postRender() {
         const allCharacters = await CharactersProvider.fetchCharacters();
         allCharacters.forEach(character => {
-            const btn = document.getElementById(`favoriteButton-${character.id}`);
+            const btn = document.querySelector(`#favoriteButton-${character.id}`);
             if (btn) {
                 btn.addEventListener("click", () => {
                     toggleFavorite(character.id);
