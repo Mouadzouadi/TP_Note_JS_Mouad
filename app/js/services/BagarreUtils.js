@@ -40,13 +40,15 @@ export function handleSelectionChange(characters, updateCards) {
     if (select1 && select2) {
         select1.addEventListener("change", () => {
             const character1 = characters.find(c => c.id === select1.value);
-            updateCards(character1);
+            const character2 = characters.find(c => c.id === select2.value);
+            updateCards(character1, character2);
             resetStyleCard();
         });
 
         select2.addEventListener("change", () => {
+            const character1 = characters.find(c => c.id === select1.value);
             const character2 = characters.find(c => c.id === select2.value);
-            updateCards(character2);
+            updateCards(character1, character2);
             resetStyleCard();
         });
     }
@@ -54,6 +56,8 @@ export function handleSelectionChange(characters, updateCards) {
 
 // Fonction pour mettre à jour les cartes
 export function updateCards(character1, character2) {
+    console.log(character1);
+    console.log(character2);
     document.querySelector("#card1").innerHTML = generateCard(character1);
     document.querySelector("#card2").innerHTML = generateCard(character2);
 }
@@ -80,7 +84,7 @@ export async function fight(character1, character2) {
     }
 }
 
-export function resetStyleCard(){
+export function resetStyleCard() {
     const card1 = document.querySelector("#card1");
     const card2 = document.querySelector("#card2");
     card1.style.backgroundColor = "white";

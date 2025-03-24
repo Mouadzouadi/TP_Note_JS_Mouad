@@ -58,14 +58,16 @@ export default class Bagarre {
     }
 
     postRender() {
-        handleSelectionChange(this.characters, (character) => {
-            this.character1 = character;
+        handleSelectionChange(this.characters, (character1, character2) => {
+            this.character1 = character1;
+            this.character2 = character2;
             updateCards(this.character1, this.character2);
         });
-
+    
         const fightButton = document.querySelector("#fight");
         if (fightButton) {
             fightButton.addEventListener("click", () => fight(this.character1, this.character2));
         }
     }
+    
 }
