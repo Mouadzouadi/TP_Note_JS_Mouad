@@ -1,4 +1,4 @@
-export function generateCard(character, isFavorite, toggleFavorite) {
+export function generateCard(character, toggleFavorite,isFavorite = false) {
     const moyNotes = character.notes.length > 0 
     ? Math.round((character.notes.reduce((acc, note) => acc + note, 0) / character.notes.length) * 10) / 10 
     : 0;
