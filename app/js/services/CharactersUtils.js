@@ -9,7 +9,7 @@ export function generateCard(character, toggleFavorite,isFavorite = false) {
             <div class="card-header text-center">
                 <h5 class="card-title">${character.name}</h5>
                 ${character.image ? 
-                    `<img src="/data/images/${character.image}" class="img-fluid" alt="" 
+                    `<img src="/data/images/${character.image}" class="img-fluid" alt="" loading="lazy"
                     style="width: 15rem; height: 15rem; object-fit: cover; margin-top: 1rem; border-radius: 2%;">`
                     : ''} 
             </div>
