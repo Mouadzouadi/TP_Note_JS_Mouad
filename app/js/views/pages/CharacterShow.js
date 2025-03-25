@@ -27,7 +27,7 @@ export default class CharacterShow {
             <section class="section">
             <h1>${post.name}${moyNotes > 0 ? ` (${moyNotes} ⭐)` : ''}</h1>
             ${post.image ? 
-                `<img src="/data/images/${post.image}" alt="${post.name}" class="img-fluid" style="max-width:300px; margin-bottom:1rem;">` 
+                `<img src="/data/images/${post.image}" alt="${post.name}" class="img-fluid"  loading ="lazy" style="max-width:300px; margin-bottom:1rem;">` 
                 : ''}
             <p><strong>Jeu d'origine :</strong> ${post.game}</p>
             <p><strong>Classe :</strong> ${post.class}</p>

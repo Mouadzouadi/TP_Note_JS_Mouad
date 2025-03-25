@@ -212,7 +212,8 @@
       ],
       "image": "kratos.webp",
       "notes": [
-        5
+        5,
+        3
       ]
     },
     {
@@ -392,7 +393,9 @@
         66
       ],
       "image": "steve.webp",
-      "notes": []
+      "notes": [
+        3
+      ]
     },
     {
       "id": "23",
